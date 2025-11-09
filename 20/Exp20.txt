@@ -1,0 +1,10 @@
+Exp:20
+In terminal:
+docker pull jetbrains/youtrack:2024.2.35942
+docker run -d --name youtrack -p 8080:8080 jetbrains/youtrack:2024.2.35942
+docker exec -it youtrack cat /opt/youtrack/conf/internal/services/configurationWizard/wizard_token.txt
+
+Got to the YouTrack with the help of localhost
+Put token then login
+Project->create new project->new issues
+------------------------------------------------------------------------------
