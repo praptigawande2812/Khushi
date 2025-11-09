@@ -1,0 +1,37 @@
+exp 29:Gitea
+
+docker pull gitea/gitea:latest
+
+docker run -d --name gitea -p 3000:3000 -p 222:22 -v gitea_data:/data gitea/gitea:latest
+
+docker ps
+
+
+
+git clone http://localhost:3000/shruti/demo.git
+add something to main branch 
+
+cd demo
+
+git checkout -b feature/add_multiply
+
+git add multiply.py
+
+git commit -m "Added multiply function"
+
+git push origin feature/add_multiply
+
+
+Go to http://localhost:3000/shruti/demo → Pull Requests → New Pull Request
+
+Base branch: main
+
+Compare branch: feature/add_multiply
+
+Add description, e.g., "Added multiply function to calculator"
+
+Submit PR
+
+Merge After Approval:
+
+Merge the PR into main
