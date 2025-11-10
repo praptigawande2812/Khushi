@@ -1,0 +1,76 @@
+Hugo Demo – Windows (Step by Step)
+
+1. Install Go
+
+# Install latest Go version
+go install
+
+
+2. Install Hugo
+
+# Get Hugo from GitHub (latest version)
+go install github.com/gohugoio/hugo@latest
+
+
+3. Set PATH
+
+# Add Go bin folder to PATH
+setx PATH "%PATH%;%USERPROFILE%\go\bin"
+
+
+4. Create a New Hugo Site
+
+hugo new site myblog
+cd myblog
+
+
+5. Initialize Git Repository
+
+git init
+
+
+6. Add Theme (Ananke)
+
+git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+
+
+7. Create a Sample Post
+
+hugo new posts/my-first-post.md
+
+
+Open the file: content/posts/my-first-post.md
+
+Do not remove default content — just add your text.
+
+Change draft = true → draft = false to make it visible.
+
+
+8. Configure Hugo
+
+Open hugo.toml or config.toml
+
+Add theme:
+
+theme = "ananke"
+
+
+Make sure baseURL is correct:
+
+baseURL = "http://localhost:1313/"
+
+
+9. Install Hugo Extended
+
+# Run CMD as administrator
+choco install hugo-extended
+
+
+Extended version is required for SCSS/SASS themes like Ananke.
+
+10. Run Hugo Server
+
+hugo server -D
+
+
+Open browser at the URL shown in terminal (usually: http://localhost:1313/)
